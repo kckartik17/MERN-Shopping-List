@@ -16,5 +16,8 @@
     "url": "git+https://github.com/kckartik17/MERN-Shopping-List.git"
   },
   "author": "Kartik Chauhan",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.4"
+  }
 }
