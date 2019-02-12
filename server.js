@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//Routes
+//Route
 const items = require("./routes/api/items");
 
 //DB config
