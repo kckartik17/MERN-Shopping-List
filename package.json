@@ -16,9 +16,5 @@
     "url": "git+https://github.com/kckartik17/MERN-Shopping-List.git"
   },
   "author": "Kartik Chauhan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kckartik17/MERN-Shopping-List/issues"
-  },
-  "homepage": "https://github.com/kckartik17/MERN-Shopping-List#readme"
+  "license": "ISC"
 }
