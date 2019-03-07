@@ -1,19 +1,19 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const path = require("path");
+const config = require("config");
 
 const app = express();
 
-//Body Parser Middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
 
 //Route
 const items = require("./routes/api/items");
+const users = require("./routes/api/users");
+const auth = require("./routes/api/auth");
 
 //DB config
-const db = require("./config/keys").mongoURI;
+const db = config.get("mongoURI");
 
 //Connect to MongoDB
 mongoose
@@ -23,8 +23,11 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("Error in connecting MongoDB"));
 
+mongoose.set("useCreateIndex", true);
 //Use routes
 app.use("/api/items", items);
+app.use("/api/users", users);
+app.use("/api/auth", auth);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
